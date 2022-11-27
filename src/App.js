@@ -5,14 +5,8 @@ import "./App.css";
 
 function App() {
   return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<SignIn />} />
-          <Route path="/create" element={<CreateAccount />} />
-          <Link></Link>
-        </Routes>
-      </BrowserRouter>
+    <div className={"App"}>
+      <SignIn />
     </div>
   );
 }
