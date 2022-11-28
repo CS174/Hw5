@@ -15,60 +15,71 @@
 <header>
     <div class="navbar">
         <a href="/">Login</a>
-        <a href="/createAccount">Create Account</a>
+        <a href="/loginVulnerable">Login Vulnerable</a>
     </div>
 </header>
 <body>
 
 <div class="App-header">
-    <form class="formbox">
+    <form class="formbox" action="http://localhost:8888/api/createAccount" method="POST">
         <label>
             Full Name:
-            <input type="text" name="name" class="login-inputbox" />
+            <input type="text" name="name" required class="login-inputbox" />
         </label>
         <label>
             Email:
-            <input type="text" name="email" class="login-inputbox" />
+            <input type="email" name="email" required class="login-inputbox" />
+        </label>
+        <label>
+            Password:
+            <input type="password" name="password" required class="login-inputbox" />
         </label>
         <label>
             Q1:
-            <input type="text" name="q1" class="login-inputbox" />
+            <div class="radio-option">
+                <input type="radio" id="q1-yes" name="q1" value="y"
+                       checked>
+                <label for="q1-yes">Yes</label>
+
+                <input type="radio" id="q1-no" name="q1" value="n">
+                <label for="q1-no">No</label>
+            </div>
         </label>
         <label>
             Q2:
-            <input type="text" name="q2" class="login-inputbox" />
+
         </label>
         <label>
             Q3:
-            <input type="text" name="q3" class="login-inputbox" />
+
         </label>
         <label>
             Q4:
-            <input type="text" name="q4" class="login-inputbox" />
+
         </label>
         <label>
             Q5:
-            <input type="text" name="q5" class="login-inputbox" />
+
         </label>
         <label>
             Q6:
-            <input type="text" name="q6" class="login-inputbox" />
+
         </label>
         <label>
             Q7:
-            <input type="text" name="q7" class="login-inputbox" />
+
         </label>
         <label>
             Q8:
-            <input type="text" name="q8" class="login-inputbox" />
+
         </label>
         <label>
             Q9:
-            <input type="text" name="q9" class="login-inputbox" />
+
         </label>
         <label>
             Q10:
-            <input type="text" name="q10" class="login-inputbox" />
+
         </label>
 
         <button type="submit" value="Create Account" class="login-button">
