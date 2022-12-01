@@ -1,0 +1,29 @@
+
+.login-inputbox {
+    background-color: white;
+    margin: auto;
+    width: 350px;
+    height: 50px;
+    border-radius: 4px;
+    type: text;
+    margin-bottom: 12px;
+    display: flex;
+}
+
+.login-button {
+    background-color: #545454;
+    margin: auto;
+    width: 350px;
+    height: 50px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.login-box {
+    margin: auto;
+    margin-top: 200px;
+    width: 520px;
+    height: 522px;
+    background: #dfdfdf;
+    border-radius: 4px;
+}

@@ -1,0 +1,6 @@
+
+<!ELEMENT info_card (people+)>
+<!ELEMENT people (name, address, response)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT address (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
