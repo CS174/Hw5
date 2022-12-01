@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE info_card SYSTEM "info_card.dtd" >
+
+<info_card >
+    <people>
+        <name> sophia </name>
+        <address> san jose </address>
+        <response> yes </response>
+    </people>
+    <people>
+        <name> jhon </name>
+        <address> san francisco </address>
+        <response> yes </response>
+    </people>
+</info_card>
