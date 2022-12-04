@@ -71,7 +71,7 @@ const CreateAccount = () => {
             <input type="password" name="password" required className="login-inputbox" onChange={(e)=>{handleChange(e)}}/>
         </label>
         <label>
-            Q1: ADD QUESTION HERE
+            Q1: Do you like romantic comedies?
             <div className="radio-option">
                 <input type="radio" id="q1-yes" name="q1" value="y" onChange={(e)=>{handleChange(e)}} />
                 <label for="q1-yes">Yes</label>
@@ -81,7 +81,7 @@ const CreateAccount = () => {
             </div>
         </label>
         <label>
-            Q2:
+            Q2: Do you like PHP?
             <div className="radio-option">
                 <input type="radio" id="q2-yes" name="q2" value="y" onChange={(e)=>{handleChange(e)}} />
                 <label for="q1-yes">Yes</label>
