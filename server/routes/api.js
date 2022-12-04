@@ -5,9 +5,22 @@ const pool = require("../database").pool;
 
 /* GET home page. */
 router.post('/create', async function(req, res, next) {
+    // NEED TO CHECK IF EMAIL EXISTS OR NOT BEFORE PROCEEDING
     const body = req.body;
+    const answers = {
+        q1: body.q1,
+        q2: body.q2,
+        q3: body.q3,
+        q4: body.q4,
+        q5: body.q5,
+        q6: body.q6,
+        q7: body.q7,
+        q8: body.q8,
+        q9: body.q9,
+        q10: body.q10,
+    }
     console.log(body)
-    const sql = `INSERT INTO users (email, name, password) VALUES ('${body.email}', '${body.name}', '${body.password}');`
+    const sql = `INSERT INTO users (email, name, password, answers) VALUES ('${body.email}', '${body.name}', '${body.password}', '${JSON.stringify(answers)}');`
 
     pool.getConnection((err, connection) => {
         if (err) throw err;
@@ -15,13 +28,8 @@ router.post('/create', async function(req, res, next) {
         connection.query(sql, (err, result) => {
             if (err) throw err;
             console.log(result);
-            const sql_answers = `INSERT INTO answers (q1, q2, q3, q4, q5, q6, q7, q8, q9, q10) 
-            VALUES ('${body.q1}', '${body.q2}', '${body.q3}', '${body.q4}', '${body.q5}', 
-            '${body.q6}', '${body.q7}', '${body.q8}', '${body.q9}', '${body.q10}',)`;
-            connection.query(sql, (err, result) => {
-                res.send(result);
-                connection.release();
-            })
+            res.send(result);
+            connection.release();
         });
     });
     // res.redirect("/")

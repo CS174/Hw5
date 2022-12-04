@@ -38,7 +38,7 @@ const CreateAccount = () => {
                 return;
             }
         }
-        const data = formData;
+        const data = JSON.stringify(formData);
         console.log("Sending create: ", data);
         const response = await fetch("http://localhost:8888/api/create", {
             method: 'POST',
@@ -46,7 +46,7 @@ const CreateAccount = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data) // body data type must match "Content-Type" header
+            body: data // body data type must match "Content-Type" header
         });
         return response.json(); // parses JSON response into native JavaScript objects    })
     }
