@@ -20,9 +20,6 @@ const CreateAccount = () => {
         q9: "",
         q10: ""
     })
-    const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
     const [formData, setFormData] = useState(form)
 
     const handleChange = (e) => {
@@ -35,8 +32,14 @@ const CreateAccount = () => {
     };
     const handleSubmit = async (e) =>{
         e.preventDefault();
+        for (let x in formData) {
+            if (formData[x].length === 0) {
+                console.log("Can't continue if form data is incomplete");
+                return;
+            }
+        }
         const data = formData;
-        console.log("Sending login: ", data);
+        console.log("Sending create: ", data);
         const response = await fetch("http://localhost:8888/api/create", {
             method: 'POST',
             mode: 'cors',

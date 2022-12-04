@@ -1,23 +1,14 @@
 const mysql = require('mysql');
-const { MYSQLUSERNAME, MYSQLPASSWORD, MYSQLPORT } = require('../config/Config')
+const { MYSQLHOST, MYSQLUSERNAME, MYSQLPASSWORD, MYSQLPORT, DATABASE } = require('../config/Config')
 
 
-const con = mysql.createConnection({
-    host: "localhost",
-    user: MYSQLUSERNAME,
-    password: MYSQLPASSWORD,
-    port: MYSQLPORT
-})
+let pool = mysql.createPool({
+    host     : MYSQLHOST,
+    user     : MYSQLUSERNAME,
+    password : MYSQLPASSWORD,
+    database : DATABASE,
+    port: MYSQLPORT,
+    connectionLimit : 15,
+});
 
-
-
-
-export default async function query(sql, params) {
-    con.connect(function(err) {
-        if (err) throw err;
-        console.log("Connected!");
-    });
-    const [results, ] = await con.execute(sql, params);
-
-    return results;
-}
+exports.pool = pool;
