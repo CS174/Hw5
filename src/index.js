@@ -1,14 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import ReactDOM from 'react-dom/client';  
+import SignIn from './Pages/SignIn';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import CreateAccount from './Pages/CreateAccount';
+import SignInVulnerable from './Pages/SignInVulnerable';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <BrowserRouter>
+    <React.StrictMode>
+      <Routes>
+        <Route path="/" element={<SignIn/>}/>
+        <Route path="/createAccount" element={<CreateAccount/>}/>
+        <Route path="/loginVulnerable" element={<SignInVulnerable/>}/>
+      </Routes>
+    </React.StrictMode>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
