@@ -21,7 +21,6 @@ var con = mysql.createConnection({
     database: DATABASE,
     port: MYSQLPORT
 });
-
 con.connect((err) => {
     if (err) throw err;
     console.log("Connected!");
