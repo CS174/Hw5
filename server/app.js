@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes');
 var apiRouter = require('./routes/api')
 const bodyParser = require("express");
+const cors = require("cors");
 var app = express();
 
 // view engine setup
@@ -15,11 +16,10 @@ app.set('view engine', 'jade');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(bodyParser.json())
-
+app.use(cors());
 app.use('/', indexRouter);
 app.use('/api', apiRouter);
 

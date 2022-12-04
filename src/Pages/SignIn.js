@@ -9,10 +9,8 @@ function SignIn() {
   const [password, setPassword] = useState("")
   const postLogin = async (e) => {
     e.preventDefault();
-    let formData = new FormData();
-    formData.append("email", email);
-    formData.append("password", password);
-    console.log("Sending login: ", formData);
+    const data = { "email": email, "password": password };
+    console.log("Sending login: ", data);
     const response = await fetch("http://localhost:8888/api/login", {
       method: 'POST',
       mode: 'cors',
@@ -20,7 +18,7 @@ function SignIn() {
         'Content-Type': 'application/json'
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: formData // body data type must match "Content-Type" header
+      body: JSON.stringify(data) // body data type must match "Content-Type" header
     });
     return response.json(); // parses JSON response into native JavaScript objects    })
   }
