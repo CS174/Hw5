@@ -3,7 +3,7 @@
 /**
  * Module dependencies.
  */
-const config = require("../config/Config.js");
+const config = require("../../config/Config.js");
 
 const app = require('../app');
 const debug = require('debug')('hw5:server');
