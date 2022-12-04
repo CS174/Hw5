@@ -38,14 +38,19 @@ router.post('/create', async function(req, res, next) {
 router.post('/login', function(req, res, next) {
     const body = req.body;
     console.log(body)
-    const sql = `SELECT COUNT(*) FROM users WHERE email='${body.email}' AND password='${body.password}'`;
+    const sql = `SELECT COUNT(*) as count FROM users WHERE email='${body.email}' AND password='${body.password}'`;
     pool.getConnection((err, connection) => {
         if (err) throw err;
-
         connection.query(sql, (err, result) => {
             if (err) throw err;
             console.log(result);
-            res.send(result);
+            if (result[0].count === 0) {
+                console.log("user not found")
+                res.send({code: 401})
+            } else {
+                console.log("Success login")
+                res.send(result);
+            }
             connection.release();
         });
     });
