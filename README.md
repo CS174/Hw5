@@ -4,6 +4,7 @@
 ### Group Members
 - Seungmi Na ID: #014665066
 - Michael Ruiz ID: 015740244
+- Aadit Dubey ID: 014374087
 
 ### Instructions
 First, open `Config.js` and fill in your database user and password.
