@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes');
 var apiRouter = require('./routes/api')
+const bodyParser = require("express");
 var app = express();
 
 // view engine setup
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json())
 
 app.use('/', indexRouter);
 app.use('/api', apiRouter);

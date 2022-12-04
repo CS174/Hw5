@@ -3,6 +3,7 @@ import '../Pages-css/Navbar.css';
 import '../Pages-css/SignIn.css';
 import '../Pages-css/App.css'
 import '../Pages-css/createAccount.css'
+import {Link} from "react-router-dom";
 const CreateAccount = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -17,8 +18,8 @@ const CreateAccount = () => {
 <div>
 <header>
   <div className="navbar">
-    <a href="loginVulnerable">Login Vulnerable</a>
-    <a href="createAccount">Create Account</a>
+      <a href="login">Login</a> |
+      <a href="loginVulnerable">Login Vulnerable</a> |
   </div>
 </header>
 

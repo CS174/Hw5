@@ -11,9 +11,10 @@ root.render(
   <BrowserRouter>
     <React.StrictMode>
       <Routes>
-        <Route path="/" element={<SignIn/>}/>
-        <Route path="/createAccount" element={<CreateAccount/>}/>
-        <Route path="/loginVulnerable" element={<SignInVulnerable/>}/>
+          <Route path="/" element={<SignIn/>}/>
+          <Route path="/login" element={<SignIn/>}/>
+          <Route path="/createAccount" element={<CreateAccount/>}/>
+          <Route path="/loginVulnerable" element={<SignInVulnerable/>}/>
       </Routes>
     </React.StrictMode>
   </BrowserRouter>
