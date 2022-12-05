@@ -3,6 +3,7 @@ const {MYSQLUSERNAME, MYSQLPASSWORD, MYSQLPORT, DATABASE} = require("./Config");
 
 // Init statements
 const createdb = `CREATE DATABASE IF NOT EXISTS CS174`;
+const usedb = `use cs174`
 const dropUserTable = `DROP TABLE IF EXISTS CS174.users`;
 const createUserTable = `CREATE TABLE CS174.users
 (
@@ -29,7 +30,9 @@ con.connect((err) => {
     // Create db
     con.query(createdb, null,() => {
         // Drop user Table
-        console.log(dropUserTable);
+        console.log(usedb)
+        con.query(usedb, null, ()=>{
+            console.log(dropUserTable);
         con.query(dropUserTable, null, () => {
             // Create user table
             console.log(createUserTable);
@@ -39,6 +42,8 @@ con.connect((err) => {
                     process.exit(0);
             });
         });
+        })
+        
     });
 });
 
