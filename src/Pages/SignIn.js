@@ -2,16 +2,17 @@ import React, {useState}from 'react'
 import '../Pages-css/Navbar.css';
 import '../Pages-css/SignIn.css';
 import '../Pages-css/App.css'
-import {Link} from "react-router-dom";
+import {Link,useNavigate} from "react-router-dom";
 
 function SignIn() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const postLogin = async (e) => {
+  const navigate = useNavigate()
+  const postLogin = (e) => {
     e.preventDefault();
     const data = { "email": email, "password": password };
     console.log("Sending login: ", data);
-    const response = await fetch("http://localhost:8888/api/login", {
+    fetch("http://localhost:8888/api/login", {
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -19,8 +20,16 @@ function SignIn() {
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: JSON.stringify(data) // body data type must match "Content-Type" header
-    });
-    return response.json(); // parses JSON response into native JavaScript objects    })
+    })
+    .then((res)=>(res.json()))
+    .then((res)=>{
+      if(res.success==false) alert("wrong login information")
+      else{
+        alert("login successful")
+        navigate(`/profile?email=${email}`)
+      }
+    })
+     // parses JSON response into native JavaScript objects    })
   }
   return (
     <div className="App">
