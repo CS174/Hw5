@@ -1,6 +1,6 @@
 // Change the values of your database
 const MYSQLUSERNAME = "root";
-const MYSQLPASSWORD = "jaibholenath";
+const MYSQLPASSWORD = "";
 const MYSQLHOST = "localhost";
 const MYSQLPORT = "3306"
 const DATABASE = "CS174"

@@ -4,7 +4,7 @@ import '../Pages-css/Navbar.css';
 import '../Pages-css/SignIn.css';
 import '../Pages-css/App.css'
 import '../Pages-css/createAccount.css'
-import {Link} from "react-router-dom";
+
 const CreateAccount = () => {
     const navigate = useNavigate();
     // const form = Object.freeze({
@@ -104,7 +104,7 @@ const CreateAccount = () => {
             </div>
         </label>
         <label>
-            Q3:
+            Q3: Do you have a car?
             <div className="radio-option">
                 <input type="radio" id="q3-yes" name="q3" value="y" onChange={e=>handleChange(e)} />
                 <label for="q1-yes">Yes</label>
@@ -114,7 +114,7 @@ const CreateAccount = () => {
             </div>
         </label>
         <label>
-            Q4:
+            Q4: Do you like pets?
             <div className="radio-option">
                 <input type="radio" id="q4-yes" name="q4" value="y" onChange={e=>handleChange(e)}/>
                 <label for="q1-yes">Yes</label>
@@ -124,7 +124,7 @@ const CreateAccount = () => {
             </div>
         </label>
         <label>
-            Q5:
+            Q5: Do you have money?
             <div className="radio-option">
                 <input type="radio" id="q5-yes" name="q5" value="y" onChange={e=>handleChange(e)} />
                 <label for="q1-yes">Yes</label>
@@ -134,7 +134,7 @@ const CreateAccount = () => {
             </div>
         </label>
         <label>
-            Q6:
+            Q6: Are your parents well off?
             <div className="radio-option">
                 <input type="radio" id="q6-yes" name="q6" value="y" onChange={e=>handleChange(e)} />
                 <label for="q1-yes">Yes</label>
@@ -144,7 +144,7 @@ const CreateAccount = () => {
             </div>
         </label>
         <label>
-            Q7:
+            Q7: Do you like eating food?
             <div className="radio-option">
                 <input type="radio" id="q7-yes" name="q7" value="y" onChange={e=>handleChange(e)}/>
                 <label for="q1-yes">Yes</label>
@@ -154,7 +154,7 @@ const CreateAccount = () => {
             </div>
         </label>
         <label>
-            Q8:
+            Q8: Do you like studying?
             <div className="radio-option">
                 <input type="radio" id="q8-yes" name="q8" value="y" onChange={e=>handleChange(e)} />
                 <label for="q1-yes">Yes</label>
@@ -164,7 +164,7 @@ const CreateAccount = () => {
             </div>
         </label>
         <label>
-            Q9:
+            Q9: Do you like passing your classes?
             <div className="radio-option">
                 <input type="radio" id="q9-yes" name="q9" value="y" onChange={e=>handleChange(e)} />
                 <label for="q1-yes">Yes</label>
@@ -174,7 +174,7 @@ const CreateAccount = () => {
             </div>
         </label>
         <label>
-            Q10:
+            Q10: Do you like sleeping?
             <div className="radio-option">
                 <input type="radio" id="q10-yes" name="q10" value="y" onChange={e=>handleChange(e)} />
                 <label for="q1-yes">Yes</label>
