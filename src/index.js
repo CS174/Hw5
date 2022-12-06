@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreateAccount from './Pages/CreateAccount';
 import SignInVulnerable from './Pages/SignInVulnerable';
+import Profile from './Pages/RefineDateOptions';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +16,7 @@ root.render(
           <Route path="/login" element={<SignIn/>}/>
           <Route path="/createAccount" element={<CreateAccount/>}/>
           <Route path="/loginVulnerable" element={<SignInVulnerable/>}/>
+          <Route path="/profile" element={<Profile/>}/>
       </Routes>
     </React.StrictMode>
   </BrowserRouter>
